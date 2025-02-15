@@ -1,0 +1,262 @@
+/* 
+  Supabase-Inspired Dark/Light Theme
+  with a Green Accent (#3ECF8E)
+  Sharp corners, improved layout
+*/
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a; /* Dark by default */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* MAIN CONTAINER */
+.app-container {
+  width: 800px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #1b1e1f;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* HEADER */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.app-subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+/* THEME SWITCH */
+.theme-switch-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #555;
+  transition: 0.4s;
+  border-radius: 0;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #3ecf8e;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* INPUT ROW */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-row input[type="text"],
+.input-row input[type="date"],
+.input-row select {
+  flex: 1;
+  padding: 10px;
+  background-color: #0a0a0a;
+  color: #fff;
+  border: 1px solid #2a2a2a;
+  font-size: 1rem;
+}
+
+.input-row input::placeholder {
+  color: #666;
+}
+
+/* TASK LIST */
+#task-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+#task-list li {
+  background-color: #26292b;
+  border: 1px solid #2a2a2a;
+  margin-bottom: 5px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* FOOTER ROW */
+.footer-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #333;
+  transition: background-color 0.3s;
+  border-radius: 0;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
+.btn-accent {
+  background-color: #3ecf8e;
+  border-color: #3ecf8e;
+}
+
+.btn-accent:hover {
+  background-color: #36b97e;
+  border-color: #36b97e;
+}
+
+.btn-danger {
+  background-color: #e03131;
+  border-color: #e03131;
+}
+
+.btn-danger:hover {
+  background-color: #c92a2a;
+  border-color: #c92a2a;
+}
+
+.btn-secondary {
+  background-color: #666;
+  border-color: #666;
+}
+
+/* LIGHT MODE OVERRIDES */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+body.light-mode .app-container {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+body.light-mode .app-title {
+  color: #000;
+}
+
+body.light-mode .app-subtitle {
+  color: #666;
+}
+
+body.light-mode .theme-icon {
+  color: #222;
+}
+
+body.light-mode .input-row input[type="text"],
+body.light-mode .input-row input[type="date"],
+body.light-mode .input-row select {
+  background-color: #fff;
+  color: #000;
+  border-color: #ccc;
+}
+
+body.light-mode #task-list li {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+}
+
+body.light-mode .btn {
+  background-color: #ccc;
+  color: #000;
+}
+
+body.light-mode .btn:hover {
+  background-color: #bbb;
+}
+
+body.light-mode .btn-accent {
+  background-color: #3ecf8e;
+  border-color: #3ecf8e;
+  color: #fff;
+}
+
+body.light-mode .btn-accent:hover {
+  background-color: #36b97e;
+  border-color: #36b97e;
+}
+
+body.light-mode .btn-danger {
+  background-color: #e03131;
+  border-color: #e03131;
+  color: #fff;
+}
+
+body.light-mode .btn-danger:hover {
+  background-color: #c92a2a;
+  border-color: #c92a2a;
+}
