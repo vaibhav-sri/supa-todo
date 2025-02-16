@@ -1,7 +1,8 @@
 /* 
-  Supabase-Inspired Dark/Light Theme
+  Dark/Light Theme
   with a Green Accent (#3ECF8E)
   Sharp corners, improved layout
+  Fully responsive, ensuring the "Add" button stays aligned on wider screens
 */
 
 /* RESET */
@@ -16,25 +17,23 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #0a0a0a; /* Dark by default */
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
 /* MAIN CONTAINER */
 .app-container {
-  width: 800px;
-  height: 600px;
-  max-width: 100%;
-  max-height: 100%;
+  /* Responsive sizing */
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+
   background-color: #1b1e1f;
   border: 1px solid #2a2a2a;
+
   display: flex;
   flex-direction: column;
   padding: 20px;
-  overflow: hidden;
 }
 
 /* HEADER */
@@ -84,7 +83,7 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: #555;
   transition: 0.4s;
-  border-radius: 0;
+  border-radius: 0; /* sharp corners */
 }
 
 .slider:before {
@@ -109,14 +108,39 @@ input:checked + .slider:before {
 /* INPUT ROW */
 .input-row {
   display: flex;
+  align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+
+  /* Keep inputs on one line by default */
+  flex-wrap: nowrap;
 }
 
+#task-input {
+  /* Take more space for the text field */
+  flex: 2;
+  min-width: 160px;
+}
+
+#task-date {
+  flex: 1;
+  min-width: 110px;
+}
+
+#task-priority {
+  flex: 1;
+  min-width: 80px;
+}
+
+#add-task {
+  flex: 1;
+  min-width: 70px;
+}
+
+/* Input styles */
 .input-row input[type="text"],
 .input-row input[type="date"],
 .input-row select {
-  flex: 1;
   padding: 10px;
   background-color: #0a0a0a;
   color: #fff;
@@ -130,9 +154,8 @@ input:checked + .slider:before {
 
 /* TASK LIST */
 #task-list {
-  flex: 1;
-  overflow-y: auto;
   margin-bottom: 15px;
+  list-style: none;
 }
 
 #task-list li {
@@ -259,4 +282,27 @@ body.light-mode .btn-danger {
 body.light-mode .btn-danger:hover {
   background-color: #c92a2a;
   border-color: #c92a2a;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 600px) {
+  /* Let inputs wrap on smaller screens */
+  .input-row {
+    flex-wrap: wrap;
+  }
+
+  .app-container {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .app-header {
+    margin-bottom: 15px;
+  }
+
+  .footer-row {
+    flex-direction: column;
+  }
 }

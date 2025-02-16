@@ -1,7 +1,7 @@
 {
   "name": "todo_app_electron",
   "version": "1.0.0",
-  "description": "A Supabase-inspired Todo App running on Electron.",
+  "description": "A todo app running on Electron.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."

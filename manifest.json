@@ -1,7 +1,7 @@
 {
   "name": "Todo App",
   "short_name": "Todo",
-  "description": "A modern Supabase-inspired todo app with dark/light mode and PWA support",
+  "description": "A todo app with dark/light mode and PWA support",
   "start_url": "./index.html",
   "display": "fullscreen",
   "background_color": "#1b1e1f",
